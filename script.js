@@ -153,7 +153,12 @@ function isValidEmail(email) {
 }
 
 // Notification system
-(c)
+function showNotification(message, type = 'info') {
+    // Remove existing notification
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
     
     // Create notification element
     const notification = document.createElement('div');
