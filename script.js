@@ -232,7 +232,21 @@ function showNotification(message, type = 'info') {
 }
 
 // Typing animation for hero title
-(s)
+
+function typeWriter(element, text, speed = 100) {
+    let i = 0;
+    element.textContent = '';
+
+    function type() {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    
+    type();
+}
 
 // Initialize typing animation when page loads
 window.addEventListener('load', () => {
